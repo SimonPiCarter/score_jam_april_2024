@@ -7,4 +7,4 @@ signal lost
 signal start
 signal restart
 
-signal spawner_slot_selected(slot : SpawnerSlot)
+signal spawner_slot_selected(slot)

@@ -6,7 +6,7 @@ func _ready():
 	interest_timer.timeout.connect(interest)
 	Constants.score = 0
 	Constants.time_since_last_score = 0
-	Constants.money = 15
+	Constants.money = Constants.cost * 3
 	Constants.interest = 5
 
 func _physics_process(delta):

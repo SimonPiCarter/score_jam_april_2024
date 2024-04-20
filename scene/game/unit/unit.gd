@@ -2,10 +2,12 @@ class_name Unit extends Node2D
 
 @onready var area = $Area2D
 @onready var animation_player = $AnimationPlayer
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 @export var id : String = ""
 
-var life : int = 3
+var life : int = 2
+var revenue : int = 2
 var speed : float = 64
 
 func take_damage(dmg : int):

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dkbqb5wsjkrqc"]
+
+[ext_resource type="Script" path="res://scene/game/unit/stats/unit_stats.gd" id="1_ynfjh"]
+[ext_resource type="SpriteFrames" uid="uid://ggqtdnr561gk" path="res://resource/unit/unit.tres" id="2_deo11"]
+
+[resource]
+script = ExtResource("1_ynfjh")
+health = 2
+revenue = 2
+sprite_frames = ExtResource("2_deo11")

@@ -14,7 +14,6 @@ fill_from = Vector2(0.543103, 1)
 fill_to = Vector2(0.50431, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3pdp"]
-radius = 200.0
 
 [sub_resource type="Gradient" id="Gradient_1k1vy"]
 offsets = PackedFloat32Array(0)
@@ -35,7 +34,6 @@ position = Vector2(0, -6)
 texture = SubResource("GradientTexture2D_8n3x1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -6)
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("3_hmv7j")
 
@@ -47,7 +45,8 @@ monitorable = false
 shape = SubResource("CircleShape2D_q3pdp")
 
 [node name="UpTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 20.0
+one_shot = true
 autostart = true
 
 [node name="upgrade_speed" parent="." instance=ExtResource("2_rjro5")]

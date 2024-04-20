@@ -9,7 +9,7 @@ extends Node2D
 var damage : int = 1
 var reload : float = 2
 var time_since_last_attack : float = 0
-var range_tower : float = 150
+var range_tower : float = 10
 
 var targets_in_range = []
 var cur_target = null
@@ -18,6 +18,7 @@ func _ready():
 	collision_shape_2d.shape.radius = range_tower
 	BusEvent.unit_died.connect(unit_died)
 	up_timer.timeout.connect(upgrade)
+	time_since_last_attack = reload
 
 func _physics_process(delta):
 	time_since_last_attack += delta
@@ -55,10 +56,17 @@ func unit_died(unit : Unit):
 		cur_target = null
 		targets_in_range.erase(unit)
 
-func upgrade():
-	if randi_range(0, 1) > 0:
+
+func upgrade_damage():
 		damage *= 2
 		upgrade_dmg.upgrade()
-	else:
-		reload *= 0.9
+
+func upgrade_reload():
+		reload = 1.25
 		upgrade_speed.upgrade()
+
+func upgrade():
+	if randi_range(0, 1) > 0:
+		upgrade_damage()
+	else:
+		upgrade_reload()

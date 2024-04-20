@@ -6,10 +6,10 @@
 script = ExtResource("1_1vyqg")
 
 [node name="RefRect" type="ReferenceRect" parent="."]
-offset_right = 629.0
-offset_bottom = 617.0
+offset_right = 256.0
+offset_bottom = 160.0
 border_width = 2.0
 
 [node name="SpawnerTimer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 10.0
 autostart = true

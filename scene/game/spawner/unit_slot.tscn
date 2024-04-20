@@ -1,14 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://beea1au37qeey"]
+[gd_scene load_steps=8 format=3 uid="uid://dom5fml71rx0n"]
 
-[ext_resource type="Script" path="res://scene/game/spawner/spawner_slot.gd" id="1_ef72v"]
-[ext_resource type="PackedScene" uid="uid://dom5fml71rx0n" path="res://scene/game/spawner/unit_slot.tscn" id="2_ky4nn"]
+[ext_resource type="Script" path="res://scene/game/spawner/unit_slot.gd" id="1_wp7jk"]
+[ext_resource type="PackedScene" uid="uid://cg000ebl3e3bd" path="res://scene/game/tower/upgrade_indicator.tscn" id="2_kiwvj"]
 
-[sub_resource type="Gradient" id="Gradient_digxh"]
+[sub_resource type="Gradient" id="Gradient_8v526"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(1, 1, 1, 0.419608)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ptmrh"]
-gradient = SubResource("Gradient_digxh")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gwqqi"]
+gradient = SubResource("Gradient_8v526")
 width = 20
 height = 20
 
@@ -51,25 +51,15 @@ _data = {
 "selected": SubResource("Animation_mdihc")
 }
 
-[node name="spawner_slot" type="Node2D"]
-script = ExtResource("1_ef72v")
+[node name="unit_slot" type="Node2D"]
+script = ExtResource("1_wp7jk")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_ptmrh")
-
-[node name="ReferenceRect" type="ReferenceRect" parent="."]
-custom_minimum_size = Vector2(16, 16)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
+texture = SubResource("GradientTexture2D_gwqqi")
 
 [node name="Button" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(20, 20)
@@ -90,14 +80,5 @@ libraries = {
 "": SubResource("AnimationLibrary_nrvt7")
 }
 
-[node name="unit_slot" parent="." instance=ExtResource("2_ky4nn")]
-visible = false
-position = Vector2(77, 0)
-
-[node name="unit_slot2" parent="." instance=ExtResource("2_ky4nn")]
-visible = false
-position = Vector2(52, 0)
-
-[node name="unit_slot3" parent="." instance=ExtResource("2_ky4nn")]
-visible = false
-position = Vector2(27, 0)
+[node name="upgrade_health" parent="." instance=ExtResource("2_kiwvj")]
+position = Vector2(-8, 3)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnu1ltt4yt0ur"]
+
+[ext_resource type="PackedScene" uid="uid://beea1au37qeey" path="res://scene/game/spawner/spawner_slot.tscn" id="1_nbvws"]
+[ext_resource type="Script" path="res://scene/debug/spawn_test.gd" id="1_obyqj"]
+[ext_resource type="PackedScene" uid="uid://b4v27t3l4r45k" path="res://scene/game/tower/tower.tscn" id="2_7hik7"]
+[ext_resource type="PackedScene" uid="uid://mc33jv0dr3al" path="res://scene/UI/command/command.tscn" id="2_bopsv"]
+
+[node name="spawn_test" type="Node2D"]
+script = ExtResource("1_obyqj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="command" parent="CanvasLayer" instance=ExtResource("2_bopsv")]
+
+[node name="tower" parent="." instance=ExtResource("2_7hik7")]
+position = Vector2(281, 104)
+
+[node name="tower2" parent="." instance=ExtResource("2_7hik7")]
+position = Vector2(309, 104)
+
+[node name="spawners" type="Node2D" parent="."]
+
+[node name="spawner_slot" parent="spawners" instance=ExtResource("1_nbvws")]
+position = Vector2(80, 100)

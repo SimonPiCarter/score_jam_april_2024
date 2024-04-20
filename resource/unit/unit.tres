@@ -2,29 +2,29 @@
 
 [ext_resource type="Texture2D" uid="uid://cmnfhai5ss4fs" path="res://resource/unit/unit.png" id="1_l2cm6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ni4cx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_daiy0"]
 atlas = ExtResource("1_l2cm6")
-region = Rect2(0, 0, 8, 8)
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3fxoc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjcfe"]
 atlas = ExtResource("1_l2cm6")
-region = Rect2(8, 0, 8, 8)
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f52yi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8to0"]
 atlas = ExtResource("1_l2cm6")
-region = Rect2(16, 0, 8, 8)
+region = Rect2(32, 0, 16, 16)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ni4cx")
+"texture": SubResource("AtlasTexture_daiy0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3fxoc")
+"texture": SubResource("AtlasTexture_jjcfe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f52yi")
+"texture": SubResource("AtlasTexture_s8to0")
 }],
 "loop": true,
 "name": &"default",

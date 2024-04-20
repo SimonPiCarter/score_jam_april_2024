@@ -19,6 +19,7 @@ offset_left = -4.0
 offset_top = -123.0
 offset_right = 4.0
 offset_bottom = 5.0
+mouse_filter = 2
 theme_override_constants/separation = 1
 alignment = 2
 

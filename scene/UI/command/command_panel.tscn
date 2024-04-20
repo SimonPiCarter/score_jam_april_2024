@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3pn62sha60v6"]
+
+[ext_resource type="Script" path="res://scene/UI/command/command_panel.gd" id="1_mek5w"]
+
+[node name="command_panel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mek5w")

@@ -21,4 +21,5 @@ func _physics_process(delta):
 			get_parent().add_child(new_unit)
 			if stat.sprite_frames != null:
 				new_unit.animated_sprite_2d.sprite_frames = stat.sprite_frames
+				new_unit.animated_sprite_2d.play("default")
 			time_since_last_production = 0

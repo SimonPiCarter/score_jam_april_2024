@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cfaxwsyu6euqj"
+path="res://.godot/imported/button_mask.png-633d7a6fd3152bb187ef901a8f1404ea.res"
+
+[deps]
+
+source_file="res://resource/button/button_mask.png"
+dest_files=["res://.godot/imported/button_mask.png-633d7a6fd3152bb187ef901a8f1404ea.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

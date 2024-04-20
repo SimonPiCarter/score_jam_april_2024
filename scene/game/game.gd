@@ -5,13 +5,15 @@ extends Node2D
 func _ready():
 	interest_timer.timeout.connect(interest)
 	Constants.score = 0
+	Constants.time_from_start = 0
 	Constants.time_since_last_score = 0
 	Constants.money = Constants.cost * 3
 	Constants.interest = 5
 
 func _physics_process(delta):
+	Constants.time_from_start += delta
 	Constants.time_since_last_score += delta
-	if Constants.time_since_last_score >= Constants.lost_time:
+	if Constants.time_from_start >= Constants.lost_time:
 		BusEvent.lost.emit()
 
 func interest():

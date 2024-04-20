@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://mc33jv0dr3al"]
+[gd_scene load_steps=10 format=3 uid="uid://mc33jv0dr3al"]
 
 [ext_resource type="Script" path="res://scene/UI/command/command.gd" id="1_v2fqg"]
+[ext_resource type="PackedScene" uid="uid://c3pn62sha60v6" path="res://scene/UI/command/command_panel.tscn" id="2_bm651"]
+[ext_resource type="PackedScene" uid="uid://ct7gstx3hbxfa" path="res://scene/UI/command/button_panel.tscn" id="3_hruma"]
+[ext_resource type="Texture2D" uid="uid://dg54uv8e38qnw" path="res://resource/unit/spawner.png" id="4_vibcl"]
+[ext_resource type="SpriteFrames" uid="uid://ggqtdnr561gk" path="res://resource/unit/unit.tres" id="5_8bs58"]
+[ext_resource type="SpriteFrames" uid="uid://d4dco0qngi7e0" path="res://resource/unit/unit_money.tres" id="6_ooqnh"]
+[ext_resource type="SpriteFrames" uid="uid://daw1i82v5p15d" path="res://resource/unit/unit_armored.tres" id="7_w80io"]
+[ext_resource type="Texture2D" uid="uid://b56ai3eue4fjx" path="res://resource/button/health.png" id="8_clb0p"]
+[ext_resource type="Texture2D" uid="uid://d0e1rso51gkhk" path="res://resource/button/cancel.png" id="9_ycgp2"]
 
 [node name="command" type="Control"]
 layout_mode = 3
@@ -47,3 +55,42 @@ text = "Add a greedy convict"
 visible = false
 layout_mode = 2
 text = "Add an armored convict"
+
+[node name="command_panel" parent="." instance=ExtResource("2_bm651")]
+layout_mode = 1
+
+[node name="build" parent="." instance=ExtResource("3_hruma")]
+visible = false
+layout_mode = 0
+tooltip_text = "Dig a hole here."
+texture = ExtResource("4_vibcl")
+
+[node name="add_vanilla" parent="." instance=ExtResource("3_hruma")]
+visible = false
+layout_mode = 0
+tooltip_text = "Set up a regular prisonner to escape here."
+sprite_frame = ExtResource("5_8bs58")
+
+[node name="add_greedy" parent="." instance=ExtResource("3_hruma")]
+visible = false
+layout_mode = 0
+tooltip_text = "Set up a greedy prisonner here, it has less health but gives more money and score."
+sprite_frame = ExtResource("6_ooqnh")
+
+[node name="add_armored" parent="." instance=ExtResource("3_hruma")]
+visible = false
+layout_mode = 0
+tooltip_text = "Set up an armored prisonner here. It has more health than regular prisonners."
+sprite_frame = ExtResource("7_w80io")
+
+[node name="up_health" parent="." instance=ExtResource("3_hruma")]
+visible = false
+layout_mode = 0
+tooltip_text = "Double health of the prisonner set up here."
+texture = ExtResource("8_clb0p")
+
+[node name="cancel" parent="." instance=ExtResource("3_hruma")]
+visible = false
+layout_mode = 0
+tooltip_text = "Unselect."
+texture = ExtResource("9_ycgp2")

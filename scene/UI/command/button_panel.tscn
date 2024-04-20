@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct7gstx3hbxfa"]
+
+[ext_resource type="Texture2D" uid="uid://bm07xdjpraiop" path="res://resource/button/button_std.tres" id="1_qsm7t"]
+[ext_resource type="Texture2D" uid="uid://cqdjus60hynf7" path="res://resource/button/button_pressed.tres" id="2_m0hui"]
+[ext_resource type="Texture2D" uid="uid://c3xhhx2sn08p3" path="res://resource/button/button_high.tres" id="3_kes00"]
+[ext_resource type="BitMap" uid="uid://cfaxwsyu6euqj" path="res://resource/button/button_mask.png" id="4_6dh38"]
+[ext_resource type="Texture2D" uid="uid://dg54uv8e38qnw" path="res://resource/unit/spawner.png" id="5_1kkdl"]
+[ext_resource type="Script" path="res://scene/UI/command/button_panel.gd" id="5_wgeoi"]
+
+[node name="button_panel" type="TextureButton"]
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+texture_normal = ExtResource("1_qsm7t")
+texture_pressed = ExtResource("2_m0hui")
+texture_hover = ExtResource("3_kes00")
+texture_click_mask = ExtResource("4_6dh38")
+script = ExtResource("5_wgeoi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 53.0
+offset_bottom = 53.0
+mouse_filter = 2
+texture = ExtResource("5_1kkdl")

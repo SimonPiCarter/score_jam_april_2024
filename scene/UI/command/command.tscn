@@ -36,3 +36,8 @@ text = "upgrade health"
 visible = false
 layout_mode = 2
 text = "upgrade production speed"
+
+[node name="build" type="Button" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+text = "dig hole"

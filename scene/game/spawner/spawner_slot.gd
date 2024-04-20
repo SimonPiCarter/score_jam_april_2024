@@ -10,10 +10,6 @@ func _ready():
 
 func selected():
 	BusEvent.spawner_slot_selected.emit(self)
-	if not spawner and Constants.money >= 5:
-		Constants.money -= 5
-		spawner = preload("res://scene/game/spawner/spawner.tscn").instantiate()
-		add_child(spawner)
 
 func up_production():
 	if spawner and spawner.produce_time > 0.55:
@@ -27,6 +23,10 @@ func up_speed():
 	if spawner:
 		spawner.speed *= 1.1
 
+func build():
+	if not spawner:
+		spawner = preload("res://scene/game/spawner/spawner.tscn").instantiate()
+		add_child(spawner)
 
 func is_selected(selected_spawner : SpawnerSlot):
 	if selected_spawner == self:

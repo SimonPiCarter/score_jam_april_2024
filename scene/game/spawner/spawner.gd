@@ -8,6 +8,8 @@ var unit_slots = []
 var time_since_last_production : float = 0
 
 func _physics_process(delta):
+	if Constants.paused:
+		return
 	time_since_last_production += delta
 	if time_since_last_production >= produce_time:
 		for i in range(0,unit_slots.size()):

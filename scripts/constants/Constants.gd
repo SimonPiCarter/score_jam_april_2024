@@ -10,3 +10,5 @@ var money = 0
 var interest = 5
 
 var cost = 50
+
+var paused = false

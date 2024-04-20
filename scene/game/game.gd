@@ -11,6 +11,8 @@ func _ready():
 	Constants.interest = 5
 
 func _physics_process(delta):
+	if Constants.paused:
+		return
 	Constants.time_from_start += delta
 	Constants.time_since_last_score += delta
 	if Constants.time_from_start >= Constants.lost_time:

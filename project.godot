@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Constants="*res://scripts/constants/Constants.gd"
 BusEvent="*res://scripts/events/BusEvent.gd"
+Leaderboard="*res://scripts/leaderboard/leaderboard.gd"
 
 [gui]
 

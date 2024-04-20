@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scene/UI/pause/pause_screen.gd" id="1_vfv5f"]
 
 [node name="pause_screen" type="Control"]
-process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

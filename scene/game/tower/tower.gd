@@ -21,6 +21,8 @@ func _ready():
 	time_since_last_attack = reload
 
 func _physics_process(delta):
+	if Constants.paused:
+		return
 	time_since_last_attack += delta
 	if cur_target != null and cur_target.is_dead():
 		cur_target = null

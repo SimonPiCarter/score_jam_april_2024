@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scene/UI/game_over/game_over.gd" id="1_hycby"]
 
 [node name="game_over" type="Control"]
-process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

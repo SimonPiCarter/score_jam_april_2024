@@ -18,6 +18,8 @@ func take_damage(dmg : int):
 		queue_free()
 
 func _physics_process(delta):
+	if Constants.paused:
+		return
 	position.x += speed * delta
 
 func is_dead() -> bool:

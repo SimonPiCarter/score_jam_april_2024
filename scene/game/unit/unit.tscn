@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1crfowu7fbbs"]
+
+[ext_resource type="Script" path="res://scene/game/unit/unit.gd" id="1_bfqkv"]
+[ext_resource type="SpriteFrames" uid="uid://ggqtdnr561gk" path="res://resource/unit/unit.tres" id="2_sw67r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o758i"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_1o88t"]
+resource_name = "damage"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_itcv2"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j7vr2"]
+_data = {
+"RESET": SubResource("Animation_itcv2"),
+"damage": SubResource("Animation_1o88t")
+}
+
+[node name="unit" type="Node2D"]
+script = ExtResource("1_bfqkv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_sw67r")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_o758i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j7vr2")
+}

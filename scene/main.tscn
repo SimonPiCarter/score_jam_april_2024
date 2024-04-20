@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgtxvhqndwv8y"]
+
+[ext_resource type="Script" path="res://scene/main.gd" id="1_aen23"]
+[ext_resource type="PackedScene" uid="uid://bo5xe4rs64wn6" path="res://scene/UI/game_over/game_over.tscn" id="5_asxuo"]
+[ext_resource type="PackedScene" uid="uid://bxjyhgyjyqk0e" path="res://scene/UI/pause/pause_screen.tscn" id="6_tpx5j"]
+
+[node name="main" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_aen23")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 191.0
+offset_bottom = 52.0
+text = "Score : 
+Time : 
+Money : "
+
+[node name="game_over" parent="CanvasLayer" instance=ExtResource("5_asxuo")]
+visible = false
+
+[node name="pause_screen" parent="CanvasLayer" instance=ExtResource("6_tpx5j")]
+visible = false
+
+[node name="interest" type="Button" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = -43.0
+offset_right = 209.0
+offset_bottom = -10.0
+grow_vertical = 0
+text = "Increase interest by 1 (5)"

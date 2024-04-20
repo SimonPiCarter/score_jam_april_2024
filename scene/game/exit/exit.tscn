@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxkyf2owt5xi0"]
+
+[ext_resource type="Script" path="res://scene/game/exit/exit.gd" id="1_w62ix"]
+
+[sub_resource type="Gradient" id="Gradient_04uk1"]
+colors = PackedColorArray(1, 1, 0.494118, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qqw1o"]
+gradient = SubResource("Gradient_04uk1")
+height = 800
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i14a1"]
+size = Vector2(64, 800)
+
+[node name="exit" type="Node2D"]
+script = ExtResource("1_w62ix")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_qqw1o")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_i14a1")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

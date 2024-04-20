@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cahaxawj5bsx8"]
+
+[ext_resource type="Script" path="res://scene/game/spawner/spawner.gd" id="1_mvene"]
+
+[sub_resource type="Gradient" id="Gradient_gl8ku"]
+colors = PackedColorArray(0, 0, 0, 1, 0.501961, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1rrvw"]
+gradient = SubResource("Gradient_gl8ku")
+width = 16
+height = 16
+
+[node name="spawner" type="Node2D"]
+script = ExtResource("1_mvene")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_1rrvw")
+
+[node name="spawn_point" type="Node2D" parent="."]
+position = Vector2(18, 1)
+metadata/_edit_group_ = true
+
+[node name="ReferenceRect" type="ReferenceRect" parent="spawn_point"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.5
+offset_right = 3.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 5.0

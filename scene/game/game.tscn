@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8rl1xun4wapc"]
+
+[ext_resource type="Script" path="res://scene/game/game.gd" id="1_pcljv"]
+[ext_resource type="PackedScene" uid="uid://b4v27t3l4r45k" path="res://scene/game/tower/tower.tscn" id="2_fuvh1"]
+[ext_resource type="PackedScene" uid="uid://dxkyf2owt5xi0" path="res://scene/game/exit/exit.tscn" id="4_3xdsa"]
+[ext_resource type="PackedScene" uid="uid://dikrds8xf8dtm" path="res://scene/game/tower/tower_spawner.tscn" id="5_pwuqh"]
+[ext_resource type="PackedScene" uid="uid://mc33jv0dr3al" path="res://scene/UI/command/command.tscn" id="6_a4e76"]
+[ext_resource type="PackedScene" uid="uid://beea1au37qeey" path="res://scene/game/spawner/spawner_slot.tscn" id="6_oce7q"]
+
+[sub_resource type="Gradient" id="Gradient_rvsgh"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.184314, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_auljq"]
+gradient = SubResource("Gradient_rvsgh")
+
+[node name="game" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_pcljv")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(554, 324)
+scale = Vector2(5.50391, 715.75)
+texture = SubResource("GradientTexture1D_auljq")
+
+[node name="exit" parent="." instance=ExtResource("4_3xdsa")]
+position = Vector2(1084, 339)
+
+[node name="tower_spawner" parent="." instance=ExtResource("5_pwuqh")]
+position = Vector2(264, 19)
+
+[node name="tower" parent="tower_spawner" instance=ExtResource("2_fuvh1")]
+position = Vector2(327, 162)
+
+[node name="tower2" parent="tower_spawner" instance=ExtResource("2_fuvh1")]
+position = Vector2(334, 486)
+
+[node name="InterestTimer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="spawners" type="Node2D" parent="."]
+position = Vector2(554, 324)
+scale = Vector2(5.50391, 715.75)
+
+[node name="spawner_slot" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, -0.349284)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot2" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, -0.310164)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot3" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, -0.271044)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot4" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, -0.233322)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot5" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, -0.191408)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot6" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, -0.156479)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot7" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, -0.117359)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot8" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, -0.0782396)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot9" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, -0.0391198)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot10" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, -0.00139713)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot11" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, 0.0405169)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot12" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, 0.0754453)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot13" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, 0.110374)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot14" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, 0.145302)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot15" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, 0.184422)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot16" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, 0.223542)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot17" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, 0.262662)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot18" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, 0.300384)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot19" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, 0.342298)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="spawner_slot20" parent="spawners" instance=ExtResource("6_oce7q")]
+position = Vector2(-83.2136, 0.377227)
+scale = Vector2(0.181689, 0.00139714)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="command" parent="CanvasLayer" instance=ExtResource("6_a4e76")]

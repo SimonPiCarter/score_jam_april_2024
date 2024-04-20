@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dikrds8xf8dtm"]
+
+[ext_resource type="Script" path="res://scene/game/tower/tower_spawner.gd" id="1_1vyqg"]
+
+[node name="tower_spawner" type="Node2D"]
+script = ExtResource("1_1vyqg")
+
+[node name="RefRect" type="ReferenceRect" parent="."]
+offset_right = 629.0
+offset_bottom = 617.0
+border_width = 2.0
+
+[node name="SpawnerTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

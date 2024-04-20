@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://brs212miwre1v"]
+
+[ext_resource type="Script" path="res://scene/UI/score_screen/score_screen.gd" id="1_u0no0"]
+
+[node name="score_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u0no0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="text_names" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="text_scores" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+bbcode_enabled = true
+scroll_active = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Refresh"

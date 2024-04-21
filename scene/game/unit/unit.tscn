@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1crfowu7fbbs"]
+[gd_scene load_steps=13 format=3 uid="uid://d1crfowu7fbbs"]
 
 [ext_resource type="Script" path="res://scene/game/unit/unit.gd" id="1_bfqkv"]
 [ext_resource type="SpriteFrames" uid="uid://ggqtdnr561gk" path="res://resource/unit/unit.tres" id="2_sw67r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o758i"]
-radius = 8.0
+radius = 4.0
 
 [sub_resource type="Animation" id="Animation_itcv2"]
 length = 0.001
@@ -31,6 +31,42 @@ _data = {
 "damage": SubResource("Animation_1o88t")
 }
 
+[sub_resource type="Gradient" id="Gradient_etd54"]
+offsets = PackedFloat32Array(0, 0.516779, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_45sg4"]
+gradient = SubResource("Gradient_etd54")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_to3kn"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color = Color(0.933333, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_45sg4")
+
+[sub_resource type="Gradient" id="Gradient_oy070"]
+offsets = PackedFloat32Array(0, 0.516779, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sr286"]
+gradient = SubResource("Gradient_oy070")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5sau8"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color = Color(0.933333, 0.952941, 0, 1)
+color_ramp = SubResource("GradientTexture1D_sr286")
+
 [node name="unit" type="Node2D"]
 z_index = -1
 script = ExtResource("1_bfqkv")
@@ -51,3 +87,18 @@ shape = SubResource("CircleShape2D_o758i")
 libraries = {
 "": SubResource("AnimationLibrary_j7vr2")
 }
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_to3kn")
+one_shot = true
+explosiveness = 1.0
+
+[node name="GPUParticles2D_gold" type="GPUParticles2D" parent="."]
+z_index = 5
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_5sau8")
+one_shot = true
+explosiveness = 1.0
+
+[node name="Timer" type="Timer" parent="."]

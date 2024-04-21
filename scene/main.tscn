@@ -12,13 +12,6 @@ script = ExtResource("1_aen23")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 191.0
-offset_bottom = 52.0
-text = "Score : 
-Time : 
-Money : "
-
 [node name="game_over" parent="CanvasLayer" instance=ExtResource("5_asxuo")]
 visible = false
 
@@ -32,10 +25,10 @@ visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 19.0
-offset_top = -49.0
-offset_right = 88.0
-offset_bottom = -18.0
+offset_left = 53.0
+offset_top = -74.0
+offset_right = 122.0
+offset_bottom = -43.0
 grow_vertical = 0
 text = "Menu"
 

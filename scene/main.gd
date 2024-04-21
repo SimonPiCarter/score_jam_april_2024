@@ -1,6 +1,5 @@
 class_name MainGame extends Node2D
 
-@onready var label = $CanvasLayer/Label
 @onready var button = $CanvasLayer/Button
 
 @onready var pause_screen = $CanvasLayer/pause_screen
@@ -17,11 +16,6 @@ func _ready():
 	add_child(game)
 
 	button.pressed.connect(open_menu)
-
-func _process(_delta):
-	label.text = "Score : "+String.num(Constants.score) \
-				+"\nTime : "+String.num(Constants.time_from_start, 2) \
-				+"\nMoney : "+String.num(Constants.money)
 
 func lost():
 	Constants.paused = true

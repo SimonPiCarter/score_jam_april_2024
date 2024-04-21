@@ -48,6 +48,45 @@ z_index = 1
 position = Vector2(255, 224)
 texture = ExtResource("3_v4weg")
 
+[node name="TimeLeft" type="RichTextLabel" parent="."]
+offset_left = 179.0
+offset_top = 286.0
+offset_right = 222.0
+offset_bottom = 305.0
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[color=lightgreen]00:00[/color]"
+
+[node name="money" type="RichTextLabel" parent="."]
+z_index = 1
+offset_left = 432.0
+offset_top = 284.0
+offset_right = 1365.0
+offset_bottom = 460.0
+rotation = -0.0406082
+scale = Vector2(0.25, 0.25)
+theme_override_colors/default_color = Color(0.894118, 0.768627, 0.941176, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("3_dl3oh")
+theme_override_font_sizes/normal_font_size = 72
+text = "money : 512"
+
+[node name="score" type="RichTextLabel" parent="."]
+z_index = 1
+offset_left = 485.0
+offset_top = 59.0
+offset_right = 1418.0
+offset_bottom = 235.0
+rotation = 0.00989231
+scale = Vector2(0.25, 0.25)
+theme_override_colors/default_color = Color(0.894118, 0.819608, 0.545098, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("3_dl3oh")
+theme_override_font_sizes/normal_font_size = 72
+text = "score : 0"
+
 [node name="right_arrow" type="TextureRect" parent="."]
 z_index = 1
 offset_left = 424.0
@@ -70,21 +109,12 @@ theme_override_fonts/normal_font = ExtResource("3_dl3oh")
 theme_override_font_sizes/normal_font_size = 72
 text = "Get here for money!"
 
-[node name="tutorial_time" type="RichTextLabel" parent="."]
-z_index = 1
-offset_left = 88.0
-offset_top = 11.0
-offset_right = 223.0
-offset_bottom = 50.0
-theme_override_font_sizes/normal_font_size = 8
-text = "You only have 3 minutes to make as many prisonners escape."
-
 [node name="tutorial_cost" type="RichTextLabel" parent="."]
 z_index = 1
-offset_left = 351.0
-offset_top = 301.0
-offset_right = 593.0
-offset_bottom = 340.0
+offset_left = 153.0
+offset_top = 11.0
+offset_right = 322.0
+offset_bottom = 42.0
 theme_override_font_sizes/normal_font_size = 8
 text = "Every action cost 50 money."
 
@@ -102,16 +132,31 @@ text = "Break walls to escape!"
 
 [node name="tutorial_traps" type="RichTextLabel" parent="."]
 z_index = 1
-offset_left = 313.0
-offset_top = 280.0
-offset_right = 769.0
-offset_bottom = 384.0
+offset_left = 3.0
+offset_top = 218.0
+offset_right = 459.0
+offset_bottom = 322.0
 rotation = 0.0799339
 scale = Vector2(0.25, 0.25)
 theme_override_colors/default_color = Color(0.764706, 1, 0.741176, 1)
 theme_override_fonts/normal_font = ExtResource("3_dl3oh")
 theme_override_font_sizes/normal_font_size = 72
-text = "Beware of traps!"
+text = "Beware of traps"
+
+[node name="tutorial_time" type="RichTextLabel" parent="."]
+z_index = 1
+offset_left = 234.0
+offset_top = 285.0
+offset_right = 690.0
+offset_bottom = 389.0
+rotation = -0.0457872
+scale = Vector2(0.25, 0.25)
+theme_override_colors/default_color = Color(0.764706, 0.439216, 0.27451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("3_dl3oh")
+theme_override_font_sizes/normal_font_size = 72
+text = "Not much time left"
 
 [node name="right_arrow2" type="TextureRect" parent="."]
 visible = false

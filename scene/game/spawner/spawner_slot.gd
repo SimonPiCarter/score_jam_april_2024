@@ -37,5 +37,10 @@ func build():
 func is_selected(selected_spawner):
 	if selected_spawner == self:
 		animation_player.play("selected")
+		for i in range(0, unit_slots.size()):
+			unit_slots[i].show()
 	else:
 		animation_player.play("RESET")
+		if not spawner:
+			for i in range(0, unit_slots.size()):
+				unit_slots[i].hide()

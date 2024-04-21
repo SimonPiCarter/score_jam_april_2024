@@ -1,6 +1,8 @@
 extends Node2D
 
 func _on_area_2d_area_entered(area):
+	if Constants.paused:
+		return
 	var unit = area.get_parent()
 	Constants.score += unit.revenue
 	Constants.money += unit.revenue

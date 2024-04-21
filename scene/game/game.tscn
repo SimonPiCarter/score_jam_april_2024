@@ -1,18 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8rl1xun4wapc"]
+[gd_scene load_steps=17 format=3 uid="uid://c8rl1xun4wapc"]
 
 [ext_resource type="Script" path="res://scene/game/game.gd" id="1_pcljv"]
+[ext_resource type="Texture2D" uid="uid://cmwbj04uev34e" path="res://resource/scenery.png" id="2_6mpgc"]
+[ext_resource type="FontFile" uid="uid://bke2kg7vafs2n" path="res://resource/font/adrip1.ttf" id="3_dl3oh"]
+[ext_resource type="Texture2D" uid="uid://dy4uwcvnd7t44" path="res://resource/walls.png" id="3_v4weg"]
 [ext_resource type="PackedScene" uid="uid://dxkyf2owt5xi0" path="res://scene/game/exit/exit.tscn" id="4_3xdsa"]
 [ext_resource type="PackedScene" uid="uid://dikrds8xf8dtm" path="res://scene/game/tower/tower_spawner.tscn" id="5_pwuqh"]
 [ext_resource type="PackedScene" uid="uid://mc33jv0dr3al" path="res://scene/UI/command/command.tscn" id="6_a4e76"]
 [ext_resource type="PackedScene" uid="uid://beea1au37qeey" path="res://scene/game/spawner/spawner_slot.tscn" id="6_oce7q"]
 [ext_resource type="Texture2D" uid="uid://daduy4xmnba1b" path="res://resource/misc/arrows.png" id="6_vmdqu"]
-
-[sub_resource type="Gradient" id="Gradient_rvsgh"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0.184314, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_auljq"]
-gradient = SubResource("Gradient_rvsgh")
+[ext_resource type="PackedScene" uid="uid://de4h8qqasxs63" path="res://scene/props/truck.tscn" id="9_dsxjy"]
+[ext_resource type="PackedScene" uid="uid://d0sagkjmdd3h4" path="res://scene/props/saved.tscn" id="9_lj6or"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q58o3"]
 atlas = ExtResource("6_vmdqu")
@@ -37,98 +35,161 @@ process_mode = 1
 texture_filter = 1
 script = ExtResource("1_pcljv")
 
+[node name="InterestTimer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(554, 324)
-scale = Vector2(5.50391, 715.75)
-texture = SubResource("GradientTexture1D_auljq")
+position = Vector2(255, 224)
+texture = ExtResource("2_6mpgc")
+
+[node name="walls" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(255, 224)
+texture = ExtResource("3_v4weg")
+
+[node name="right_arrow" type="TextureRect" parent="."]
+z_index = 1
+offset_left = 424.0
+offset_top = 60.0
+offset_right = 552.0
+offset_bottom = 188.0
+scale = Vector2(0.278607, 0.278607)
+texture = SubResource("AtlasTexture_q58o3")
 
 [node name="tutorial_exit" type="RichTextLabel" parent="."]
-offset_left = 277.0
-offset_top = 9.0
-offset_right = 519.0
-offset_bottom = 48.0
-theme_override_font_sizes/normal_font_size = 10
-text = "Prisonners reaching this zone give you money and scores"
+z_index = 1
+offset_left = 341.0
+offset_top = 61.0
+offset_right = 1274.0
+offset_bottom = 237.0
+rotation = -0.0406082
+scale = Vector2(0.25, 0.25)
+theme_override_colors/default_color = Color(0.772549, 0.811765, 0.984314, 1)
+theme_override_fonts/normal_font = ExtResource("3_dl3oh")
+theme_override_font_sizes/normal_font_size = 72
+text = "Get here for money!"
 
 [node name="tutorial_time" type="RichTextLabel" parent="."]
-offset_left = 52.0
+z_index = 1
+offset_left = 88.0
 offset_top = 11.0
-offset_right = 294.0
+offset_right = 223.0
 offset_bottom = 50.0
-theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/normal_font_size = 8
 text = "You only have 3 minutes to make as many prisonners escape."
 
 [node name="tutorial_cost" type="RichTextLabel" parent="."]
+z_index = 1
 offset_left = 351.0
 offset_top = 301.0
 offset_right = 593.0
 offset_bottom = 340.0
-theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/normal_font_size = 8
 text = "Every action cost 50 money."
 
-[node name="right_arrow" type="TextureRect" parent="."]
-offset_left = 382.0
-offset_top = 5.0
-offset_right = 510.0
-offset_bottom = 133.0
-texture = SubResource("AtlasTexture_q58o3")
-
 [node name="tutorial_spawner" type="RichTextLabel" parent="."]
-offset_left = 22.0
-offset_top = 53.0
-offset_right = 148.0
-offset_bottom = 104.0
-theme_override_font_sizes/normal_font_size = 10
-text = "Dig holes clicking to allow prisonners to escape."
+z_index = 1
+offset_left = 91.0
+offset_top = 58.0
+offset_right = 659.0
+offset_bottom = 173.0
+rotation = 0.0416696
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/normal_font = ExtResource("3_dl3oh")
+theme_override_font_sizes/normal_font_size = 72
+text = "Break walls to escape!"
+
+[node name="tutorial_traps" type="RichTextLabel" parent="."]
+z_index = 1
+offset_left = 313.0
+offset_top = 280.0
+offset_right = 769.0
+offset_bottom = 384.0
+rotation = 0.0799339
+scale = Vector2(0.25, 0.25)
+theme_override_colors/default_color = Color(0.764706, 1, 0.741176, 1)
+theme_override_fonts/normal_font = ExtResource("3_dl3oh")
+theme_override_font_sizes/normal_font_size = 72
+text = "Beware of traps!"
 
 [node name="right_arrow2" type="TextureRect" parent="."]
+visible = false
+z_index = 1
 offset_left = 241.0
 offset_top = 202.0
 offset_right = 369.0
 offset_bottom = 330.0
 texture = SubResource("AtlasTexture_vffdh")
 
-[node name="tutorial_traps" type="RichTextLabel" parent="."]
-offset_left = 102.0
-offset_top = 281.0
-offset_right = 348.0
-offset_bottom = 316.0
-theme_override_font_sizes/normal_font_size = 10
-text = "Traps are being set up chose carefully where you dig new holes "
-
 [node name="right_arrow3" type="TextureRect" parent="."]
+visible = false
+z_index = 1
 offset_left = -8.0
 offset_top = 76.0
 offset_right = 120.0
 offset_bottom = 204.0
 texture = SubResource("AtlasTexture_6vg3k")
 
-[node name="exit" parent="." instance=ExtResource("4_3xdsa")]
-position = Vector2(550, 323)
-
 [node name="tower_spawner" parent="." instance=ExtResource("5_pwuqh")]
 position = Vector2(215, 100)
 
-[node name="InterestTimer" type="Timer" parent="."]
-wait_time = 15.0
-autostart = true
+[node name="exit" parent="." instance=ExtResource("4_3xdsa")]
+position = Vector2(500, 323)
+
+[node name="exit_scene" type="Node2D" parent="."]
+z_index = 1
+
+[node name="saved" parent="exit_scene" instance=ExtResource("9_lj6or")]
+position = Vector2(522, 115)
+
+[node name="saved3" parent="exit_scene" instance=ExtResource("9_lj6or")]
+position = Vector2(512, 153)
+
+[node name="saved4" parent="exit_scene" instance=ExtResource("9_lj6or")]
+position = Vector2(521, 195)
+
+[node name="saved5" parent="exit_scene" instance=ExtResource("9_lj6or")]
+position = Vector2(507, 258)
+
+[node name="saved6" parent="exit_scene" instance=ExtResource("9_lj6or")]
+position = Vector2(487, 247)
+
+[node name="saved2" parent="exit_scene" instance=ExtResource("9_lj6or")]
+position = Vector2(501, 117)
+
+[node name="truck2" parent="exit_scene" instance=ExtResource("9_dsxjy")]
+position = Vector2(479, 134)
+
+[node name="truck4" parent="exit_scene" instance=ExtResource("9_dsxjy")]
+position = Vector2(479, 198)
+
+[node name="truck5" parent="exit_scene" instance=ExtResource("9_dsxjy")]
+position = Vector2(478, 166)
+
+[node name="truck3" parent="exit_scene" instance=ExtResource("9_dsxjy")]
+position = Vector2(478, 229)
+
+[node name="truck" parent="exit_scene" instance=ExtResource("9_dsxjy")]
+position = Vector2(479, 100)
 
 [node name="spawners" type="Node2D" parent="."]
+z_index = 1
 
 [node name="spawner_slot" parent="spawners" instance=ExtResource("6_oce7q")]
-position = Vector2(100, 100)
+position = Vector2(78, 72)
 
 [node name="spawner_slot2" parent="spawners" instance=ExtResource("6_oce7q")]
-position = Vector2(100, 132)
+position = Vector2(78, 104)
 
 [node name="spawner_slot3" parent="spawners" instance=ExtResource("6_oce7q")]
-position = Vector2(100, 164)
+position = Vector2(78, 136)
 
 [node name="spawner_slot4" parent="spawners" instance=ExtResource("6_oce7q")]
-position = Vector2(100, 196)
+position = Vector2(78, 168)
 
 [node name="spawner_slot5" parent="spawners" instance=ExtResource("6_oce7q")]
-position = Vector2(100, 228)
+position = Vector2(78, 200)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

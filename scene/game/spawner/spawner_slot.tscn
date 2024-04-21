@@ -1,16 +1,35 @@
-[gd_scene load_steps=8 format=3 uid="uid://beea1au37qeey"]
+[gd_scene load_steps=7 format=3 uid="uid://beea1au37qeey"]
 
 [ext_resource type="Script" path="res://scene/game/spawner/spawner_slot.gd" id="1_ef72v"]
+[ext_resource type="Texture2D" uid="uid://dgg3l2lsndxg0" path="res://resource/explosif/explo_c4.png" id="2_4rv2f"]
 [ext_resource type="PackedScene" uid="uid://dom5fml71rx0n" path="res://scene/game/spawner/unit_slot.tscn" id="2_ky4nn"]
 
-[sub_resource type="Gradient" id="Gradient_digxh"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 0.419608)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ptmrh"]
-gradient = SubResource("Gradient_digxh")
-width = 20
-height = 20
+[sub_resource type="Animation" id="Animation_w40rj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_mdihc"]
 resource_name = "selected"
@@ -27,22 +46,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.0001, 0.5),
 "transitions": PackedFloat32Array(-2, 1, -2),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.5, 1.5)]
-}
-
-[sub_resource type="Animation" id="Animation_w40rj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.5), Vector2(0.75, 0.75)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nrvt7"]
@@ -55,7 +59,9 @@ _data = {
 script = ExtResource("1_ef72v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_ptmrh")
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4rv2f")
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 custom_minimum_size = Vector2(16, 16)
@@ -86,18 +92,19 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_nrvt7")
 }
 
 [node name="unit_slot" parent="." instance=ExtResource("2_ky4nn")]
 visible = false
-position = Vector2(77, 0)
+position = Vector2(89, 24)
 
 [node name="unit_slot2" parent="." instance=ExtResource("2_ky4nn")]
 visible = false
-position = Vector2(52, 0)
+position = Vector2(64, 24)
 
 [node name="unit_slot3" parent="." instance=ExtResource("2_ky4nn")]
 visible = false
-position = Vector2(27, 0)
+position = Vector2(39, 24)

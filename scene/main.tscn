@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgtxvhqndwv8y"]
+[gd_scene load_steps=6 format=3 uid="uid://dgtxvhqndwv8y"]
 
 [ext_resource type="Script" path="res://scene/main.gd" id="1_aen23"]
 [ext_resource type="PackedScene" uid="uid://cci2jkmgx8nf2" path="res://scene/UI/menu/menu.tscn" id="4_cihhe"]
 [ext_resource type="PackedScene" uid="uid://bo5xe4rs64wn6" path="res://scene/UI/game_over/game_over.tscn" id="5_asxuo"]
+[ext_resource type="AudioStream" uid="uid://bvhdx8ruxeu6d" path="res://resource/music/first_music_looped.mp3" id="5_d61sc"]
 [ext_resource type="PackedScene" uid="uid://bxjyhgyjyqk0e" path="res://scene/UI/pause/pause_screen.tscn" id="6_tpx5j"]
 
 [node name="main" type="Node2D"]
@@ -37,3 +38,8 @@ offset_right = 88.0
 offset_bottom = -18.0
 grow_vertical = 0
 text = "Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_d61sc")
+volume_db = -8.0
+autoplay = true

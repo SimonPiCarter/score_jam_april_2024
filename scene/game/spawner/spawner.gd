@@ -1,11 +1,21 @@
 class_name Spawner extends Node2D
 
 @onready var spawn_point = $spawn_point
+@onready var sprite_2d = $Sprite2D
 
 var model_path : String = "res://scene/game/unit/unit.tscn"
 var produce_time : float = 4
 var unit_slots = []
 var time_since_last_production : float = 0
+
+var sprites = [
+	preload("res://resource/broken_wall.png"),
+	preload("res://resource/broken_wall_2.png"),
+	preload("res://resource/broken_wall_3.png"),
+]
+
+func _ready():
+	sprite_2d.texture = sprites[randi_range(0, sprites.size()-1)]
 
 func _physics_process(delta):
 	if Constants.paused:

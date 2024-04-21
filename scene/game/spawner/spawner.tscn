@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://cahaxawj5bsx8"]
 
 [ext_resource type="Script" path="res://scene/game/spawner/spawner.gd" id="1_mvene"]
-[ext_resource type="Texture2D" uid="uid://dg54uv8e38qnw" path="res://resource/unit/spawner.png" id="2_d10w6"]
+[ext_resource type="Texture2D" uid="uid://5lnfc62v8l8y" path="res://resource/broken_wall.png" id="2_bcu1e"]
 
 [node name="spawner" type="Node2D"]
 script = ExtResource("1_mvene")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("2_d10w6")
+position = Vector2(-3, -2)
+texture = ExtResource("2_bcu1e")
 
 [node name="spawn_point" type="Node2D" parent="."]
-position = Vector2(18, 1)
+position = Vector2(31, 29)
 metadata/_edit_group_ = true
 
 [node name="ReferenceRect" type="ReferenceRect" parent="spawn_point"]

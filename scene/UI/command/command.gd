@@ -63,34 +63,34 @@ func up_health_pressed():
 	if unit and Constants.money >= Constants.cost:
 		Constants.money -= Constants.cost
 		unit.up_health()
-	BusEvent.spawner_slot_selected.emit(null)
+		BusEvent.spawner_slot_selected.emit(null)
 
 func build_pressed():
 	if spawner and Constants.money >= Constants.cost and not spawner.spawner:
 		Constants.money -= Constants.cost
 		spawner.build()
-	BusEvent.spawner_slot_selected.emit(null)
+		BusEvent.spawner_slot_selected.emit(null)
 
 func add_vanilla_pressed():
 	if unit and Constants.money >= Constants.cost:
 		Constants.money -= Constants.cost
 		unit.stats = preload("res://scene/game/unit/stats/vanilla_unit.tres")
 		unit.update()
-	BusEvent.spawner_slot_selected.emit(null)
+		BusEvent.spawner_slot_selected.emit(null)
 
 func add_greedy_pressed():
 	if unit and Constants.money >= Constants.cost:
 		Constants.money -= Constants.cost
 		unit.stats = preload("res://scene/game/unit/stats/greedy_unit.tres")
 		unit.update()
-	BusEvent.spawner_slot_selected.emit(null)
+		BusEvent.spawner_slot_selected.emit(null)
 
 func add_armored_pressed():
 	if unit and Constants.money >= Constants.cost:
 		Constants.money -= Constants.cost
 		unit.stats = preload("res://scene/game/unit/stats/armored_unit.tres")
 		unit.update()
-	BusEvent.spawner_slot_selected.emit(null)
+		BusEvent.spawner_slot_selected.emit(null)
 
 func cancel_pressed():
 	BusEvent.spawner_slot_selected.emit(null)

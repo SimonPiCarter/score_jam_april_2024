@@ -32,11 +32,11 @@ _data = {
 }
 
 [node name="unit" type="Node2D"]
+z_index = -1
 script = ExtResource("1_bfqkv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_sw67r")
 autoplay = "default"
 

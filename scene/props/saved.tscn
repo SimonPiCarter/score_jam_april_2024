@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0sagkjmdd3h4"]
+
+[ext_resource type="SpriteFrames" uid="uid://3823rq0ttwnb" path="res://resource/unit/unit_saved.tres" id="1_4syjo"]
+[ext_resource type="Script" path="res://scene/props/saved.gd" id="1_cwigb"]
+
+[node name="saved" type="Node2D"]
+texture_filter = 3
+script = ExtResource("1_cwigb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-1, 1)
+sprite_frames = ExtResource("1_4syjo")
+animation = &"breathe"
+frame_progress = 0.0406115

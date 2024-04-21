@@ -62,7 +62,7 @@ layout_mode = 1
 [node name="build" parent="." instance=ExtResource("3_hruma")]
 visible = false
 layout_mode = 0
-tooltip_text = "Dig a hole here."
+tooltip_text = "Break this wall."
 texture = ExtResource("4_vibcl")
 
 [node name="add_vanilla" parent="." instance=ExtResource("3_hruma")]

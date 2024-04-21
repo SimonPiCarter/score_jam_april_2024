@@ -1,6 +1,6 @@
 class_name MainGame extends Node2D
 
-@onready var button = $CanvasLayer/Button
+@onready var camera = $camera
 
 @onready var pause_screen = $CanvasLayer/pause_screen
 @onready var menu = $CanvasLayer/menu
@@ -15,7 +15,7 @@ func _ready():
 	game = preload("res://scene/game/game.tscn").instantiate()
 	add_child(game)
 
-	button.pressed.connect(open_menu)
+	get_tree().get_root().size_changed.connect(resize)
 
 func lost():
 	Constants.paused = true
@@ -39,3 +39,9 @@ func _input(event):
 	if event is InputEventKey and event.is_pressed() and event.keycode == KEY_ESCAPE:
 		Constants.paused = not Constants.paused
 		menu.visible = Constants.paused
+
+func resize():
+	var window_size = get_tree().get_root().size
+	var diff_x = max(0, window_size.x - 1152)
+	var diff_y = max(0, window_size.y - 648)
+	camera.position = -Vector2(diff_x/4.,diff_y/4.)

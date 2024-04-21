@@ -2,7 +2,7 @@ extends Control
 
 @onready var text_names = $HBoxContainer/text_names
 @onready var text_scores = $HBoxContainer/text_scores
-@onready var button = $Button
+@onready var button = $button
 
 var debug = false
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://brs212miwre1v"]
+[gd_scene load_steps=4 format=3 uid="uid://brs212miwre1v"]
 
 [ext_resource type="Script" path="res://scene/UI/score_screen/score_screen.gd" id="1_u0no0"]
+[ext_resource type="FontFile" uid="uid://dhl3ca1ahg2i5" path="res://resource/font/Minecraft.ttf" id="2_5t46m"]
+[ext_resource type="PackedScene" uid="uid://c1d4sfyyvgtqg" path="res://scene/UI/button/button.tscn" id="3_xxu2t"]
 
 [node name="score_screen" type="Control"]
 layout_mode = 3
@@ -24,6 +26,7 @@ alignment = 1
 [node name="text_names" type="RichTextLabel" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_5t46m")
 bbcode_enabled = true
 scroll_active = false
 autowrap_mode = 0
@@ -31,19 +34,19 @@ autowrap_mode = 0
 [node name="text_scores" type="RichTextLabel" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_5t46m")
 bbcode_enabled = true
 scroll_active = false
 
-[node name="Button" type="Button" parent="."]
+[node name="button" parent="." instance=ExtResource("3_xxu2t")]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
-grow_horizontal = 2
+offset_left = -64.0
+offset_top = -45.0
+offset_right = 56.0
+offset_bottom = -25.0
 grow_vertical = 0
-text = "Refresh"
+text = "REFRESH"

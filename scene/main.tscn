@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgtxvhqndwv8y"]
+[gd_scene load_steps=8 format=3 uid="uid://dgtxvhqndwv8y"]
 
 [ext_resource type="Script" path="res://scene/main.gd" id="1_aen23"]
 [ext_resource type="PackedScene" uid="uid://cci2jkmgx8nf2" path="res://scene/UI/menu/menu.tscn" id="4_cihhe"]
 [ext_resource type="PackedScene" uid="uid://bo5xe4rs64wn6" path="res://scene/UI/game_over/game_over.tscn" id="5_asxuo"]
 [ext_resource type="AudioStream" uid="uid://bvhdx8ruxeu6d" path="res://resource/music/first_music_looped.mp3" id="5_d61sc"]
 [ext_resource type="PackedScene" uid="uid://bxjyhgyjyqk0e" path="res://scene/UI/pause/pause_screen.tscn" id="6_tpx5j"]
+
+[sub_resource type="Gradient" id="Gradient_4vpov"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_78ksm"]
+gradient = SubResource("Gradient_4vpov")
 
 [node name="main" type="Node2D"]
 process_mode = 3
@@ -21,18 +28,35 @@ visible = false
 [node name="menu" parent="CanvasLayer" instance=ExtResource("4_cihhe")]
 visible = false
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 53.0
-offset_top = -74.0
-offset_right = 122.0
-offset_bottom = -43.0
-grow_vertical = 0
-text = "Menu"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_d61sc")
 volume_db = -8.0
 autoplay = true
+
+[node name="camera" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="left" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(-623, 205.5)
+scale = Vector2(4.875, 1285)
+texture = SubResource("GradientTexture1D_78ksm")
+
+[node name="up" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(294.5, -480)
+scale = Vector2(12.043, 962)
+texture = SubResource("GradientTexture1D_78ksm")
+
+[node name="down" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(291, 808)
+scale = Vector2(12.043, 962)
+texture = SubResource("GradientTexture1D_78ksm")
+
+[node name="right" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(1765.75, 53.5001)
+scale = Vector2(9.30273, 2027)
+texture = SubResource("GradientTexture1D_78ksm")

@@ -12,7 +12,7 @@ var player_id = 0
 
 # HTTP Request node can only handle one call per node
 var auth_http = HTTPRequest.new()
-var leaderboard_http = HTTPRequest.new()
+var leaderboard_http : HTTPRequest = null
 var submit_score_http = HTTPRequest.new()
 
 var set_name_http = HTTPRequest.new()
@@ -76,6 +76,8 @@ func _on_authentication_request_completed(_result, _response_code, _headers, bod
 
 
 func _get_leaderboards():
+	if leaderboard_http:
+		return
 	print("Getting leaderboards")
 	var url = "https://api.lootlocker.io/game/leaderboards/"+leaderboard_key+"/list?count=10"
 	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
@@ -108,6 +110,7 @@ func _on_leaderboard_request_completed(_result, _response_code, _headers, body):
 
 	# Clear node
 	leaderboard_http.queue_free()
+	leaderboard_http = null
 
 	BusEvent.leaderboard_refreshed.emit(body)
 

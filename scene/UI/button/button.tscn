@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1d4sfyyvgtqg"]
+
+[ext_resource type="Texture2D" uid="uid://djt8kqjd8dqrb" path="res://resource/ui/button_std.png" id="1_23glq"]
+[ext_resource type="Script" path="res://scene/UI/button/button.gd" id="1_g07lr"]
+[ext_resource type="Texture2D" uid="uid://b4m3o7udpx524" path="res://resource/ui/button_pressed.png" id="2_n5kcm"]
+[ext_resource type="FontFile" uid="uid://dhl3ca1ahg2i5" path="res://resource/font/Minecraft.ttf" id="4_ap3uu"]
+
+[node name="button" type="Control"]
+custom_minimum_size = Vector2(120, 20)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g07lr")
+
+[node name="std" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_23glq")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 6
+
+[node name="pressed" type="NinePatchRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n5kcm")
+patch_margin_left = 2
+patch_margin_top = 4
+patch_margin_right = 2
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_ap3uu")
+text = "SUBMIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -1,7 +1,7 @@
 extends Control
 
 @onready var line_edit = $VBoxContainer/HBoxContainer/LineEdit
-@onready var button = $VBoxContainer/HBoxContainer/Button
+@onready var button = $VBoxContainer/HBoxContainer/button
 @onready var rich_text_label = $VBoxContainer/RichTextLabel
 
 var debug = false

@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cci2jkmgx8nf2"]
+[gd_scene load_steps=7 format=3 uid="uid://cci2jkmgx8nf2"]
 
 [ext_resource type="Script" path="res://scene/UI/menu/menu.gd" id="1_cql8i"]
 [ext_resource type="PackedScene" uid="uid://brs212miwre1v" path="res://scene/UI/score_screen/score_screen.tscn" id="1_yi72v"]
 [ext_resource type="PackedScene" uid="uid://bqycthlyrq2vv" path="res://scene/UI/name_selection/name_selection.tscn" id="2_ry0y7"]
+[ext_resource type="PackedScene" uid="uid://c1d4sfyyvgtqg" path="res://scene/UI/button/button.tscn" id="5_7drvb"]
+[ext_resource type="Texture2D" uid="uid://p56eg11bwr7r" path="res://resource/walls_menu.png" id="5_co0l8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl7eo"]
+atlas = ExtResource("5_co0l8")
+region = Rect2(253.082, 347.289, 580, 524.147)
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -53,30 +59,54 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -250.0
+offset_right = 275.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_nl7eo")
+
 [node name="score_screen" parent="." instance=ExtResource("1_yi72v")]
 layout_mode = 1
-offset_left = 706.0
-offset_top = 78.0
-offset_bottom = -77.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -159.0
+offset_right = 167.0
+offset_bottom = 181.0
 
 [node name="name_selection" parent="." instance=ExtResource("2_ry0y7")]
 layout_mode = 1
-offset_left = 34.0
-offset_top = 101.0
-offset_right = -843.0
-offset_bottom = -474.0
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -52.0
-offset_top = -71.0
-offset_right = 50.0
-offset_bottom = -40.0
-grow_horizontal = 2
-grow_vertical = 0
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -222.0
+offset_right = -124.0
+offset_bottom = -222.0
+
+[node name="Button" parent="." instance=ExtResource("5_7drvb")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 205.0
+offset_right = 85.0
+offset_bottom = 225.0
 text = "Leave Menu"

@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8rl1xun4wapc"]
+[gd_scene load_steps=18 format=3 uid="uid://c8rl1xun4wapc"]
 
 [ext_resource type="Script" path="res://scene/game/game.gd" id="1_pcljv"]
 [ext_resource type="Texture2D" uid="uid://cmwbj04uev34e" path="res://resource/scenery.png" id="2_6mpgc"]
 [ext_resource type="FontFile" uid="uid://bke2kg7vafs2n" path="res://resource/font/adrip1.ttf" id="3_dl3oh"]
 [ext_resource type="Texture2D" uid="uid://dy4uwcvnd7t44" path="res://resource/walls.png" id="3_v4weg"]
 [ext_resource type="PackedScene" uid="uid://dxkyf2owt5xi0" path="res://scene/game/exit/exit.tscn" id="4_3xdsa"]
+[ext_resource type="FontFile" uid="uid://dhl3ca1ahg2i5" path="res://resource/font/Minecraft.ttf" id="4_no37e"]
 [ext_resource type="PackedScene" uid="uid://dikrds8xf8dtm" path="res://scene/game/tower/tower_spawner.tscn" id="5_pwuqh"]
 [ext_resource type="PackedScene" uid="uid://mc33jv0dr3al" path="res://scene/UI/command/command.tscn" id="6_a4e76"]
 [ext_resource type="PackedScene" uid="uid://beea1au37qeey" path="res://scene/game/spawner/spawner_slot.tscn" id="6_oce7q"]
@@ -49,11 +50,12 @@ position = Vector2(255, 224)
 texture = ExtResource("3_v4weg")
 
 [node name="TimeLeft" type="RichTextLabel" parent="."]
-offset_left = 179.0
-offset_top = 286.0
-offset_right = 222.0
-offset_bottom = 305.0
-theme_override_font_sizes/normal_font_size = 12
+offset_left = 176.0
+offset_top = 287.0
+offset_right = 232.0
+offset_bottom = 306.0
+theme_override_fonts/normal_font = ExtResource("4_no37e")
+theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "[color=lightgreen]00:00[/color]"
 
@@ -236,10 +238,6 @@ position = Vector2(78, 168)
 [node name="spawner_slot5" parent="spawners" instance=ExtResource("6_oce7q")]
 position = Vector2(78, 200)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="command" parent="CanvasLayer" instance=ExtResource("6_a4e76")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-zoom = Vector2(2, 2)
+[node name="command" parent="." instance=ExtResource("6_a4e76")]
+z_index = 5
+scale = Vector2(0.5, 0.5)

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqycthlyrq2vv"]
+[gd_scene load_steps=4 format=3 uid="uid://bqycthlyrq2vv"]
 
 [ext_resource type="Script" path="res://scene/UI/name_selection/name_selection.gd" id="1_3egl8"]
+[ext_resource type="FontFile" uid="uid://dhl3ca1ahg2i5" path="res://resource/font/Minecraft.ttf" id="2_r1ael"]
+[ext_resource type="PackedScene" uid="uid://c1d4sfyyvgtqg" path="res://scene/UI/button/button.tscn" id="3_2f576"]
 
 [node name="name_selection" type="Control"]
 layout_mode = 3
@@ -22,15 +24,18 @@ layout_mode = 2
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r1ael")
+theme_override_font_sizes/font_size = 16
 placeholder_text = "Enter your name here"
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="button" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_2f576")]
 layout_mode = 2
-text = "Submit"
+text = "SUBMIT"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_r1ael")
 bbcode_enabled = true
 text = "Successful!"
 scroll_active = false

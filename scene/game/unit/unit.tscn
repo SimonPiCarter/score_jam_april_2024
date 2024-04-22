@@ -1,7 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1crfowu7fbbs"]
+[gd_scene load_steps=17 format=3 uid="uid://d1crfowu7fbbs"]
 
 [ext_resource type="Script" path="res://scene/game/unit/unit.gd" id="1_bfqkv"]
 [ext_resource type="SpriteFrames" uid="uid://ggqtdnr561gk" path="res://resource/unit/unit.tres" id="2_sw67r"]
+[ext_resource type="AudioStream" uid="uid://beflkrafwufea" path="res://resource/music/hurt_1.mp3" id="3_au4xp"]
+[ext_resource type="AudioStream" uid="uid://d3khqwwer6hak" path="res://resource/music/hurt_2.mp3" id="4_hut2q"]
+[ext_resource type="AudioStream" uid="uid://cbligcrd5olry" path="res://resource/music/hurt_3.mp3" id="5_noqhb"]
+[ext_resource type="AudioStream" uid="uid://da043qbdi1poo" path="res://resource/music/bell_1.mp3" id="6_mlx62"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o758i"]
 radius = 4.0
@@ -102,3 +106,15 @@ one_shot = true
 explosiveness = 1.0
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="player_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_au4xp")
+
+[node name="player_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hut2q")
+
+[node name="player_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_noqhb")
+
+[node name="player_gold" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mlx62")

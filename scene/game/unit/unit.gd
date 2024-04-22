@@ -6,6 +6,8 @@ class_name Unit extends Node2D
 @onready var gpu_particles_2d = $GPUParticles2D
 @onready var gpu_particles_2d_gold = $GPUParticles2D_gold
 @onready var timer = $Timer
+@onready var players = [$player_1, $player_2, $player_3]
+@onready var player_gold = $player_gold
 
 @export var id : String = ""
 
@@ -21,6 +23,7 @@ func take_damage(dmg : int):
 	animation_player.play("damage")
 	gpu_particles_2d.restart()
 	gpu_particles_2d.emitting = true
+	players[randi_range(0,2)].play()
 	if is_dead():
 		die()
 

@@ -9,4 +9,5 @@ func _on_area_2d_area_entered(area):
 	Constants.time_since_last_score = 0
 	BusEvent.unit_scored.emit(unit)
 	unit.gpu_particles_2d_gold.emitting = true
+	unit.player_gold.play()
 	unit.die()

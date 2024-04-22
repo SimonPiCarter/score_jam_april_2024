@@ -13,6 +13,7 @@ func _ready():
 	BusEvent.start.connect(start)
 	BusEvent.restart.connect(restart)
 	game = preload("res://scene/game/game.tscn").instantiate()
+	game.open_menu.connect(open_menu)
 	add_child(game)
 
 	get_tree().get_root().size_changed.connect(resize)
@@ -28,6 +29,7 @@ func start():
 func restart():
 	game.queue_free()
 	game = preload("res://scene/game/game.tscn").instantiate()
+	game.open_menu.connect(open_menu)
 	add_child(game)
 	start()
 

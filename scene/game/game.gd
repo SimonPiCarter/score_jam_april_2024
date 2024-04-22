@@ -4,6 +4,9 @@ extends Node2D
 @onready var time_left = $TimeLeft
 @onready var money = $money
 @onready var score = $score
+@onready var menu_button = $menu_button
+
+signal open_menu
 
 func _ready():
 	interest_timer.timeout.connect(interest)
@@ -12,6 +15,10 @@ func _ready():
 	Constants.time_since_last_score = 0
 	Constants.money = Constants.cost * 3
 	Constants.interest = 50
+	menu_button.pressed.connect(on_menu_button)
+
+func on_menu_button():
+	open_menu.emit()
 
 func _process(_delta):
 	var total_time_left = int(Constants.lost_time - Constants.time_from_start)

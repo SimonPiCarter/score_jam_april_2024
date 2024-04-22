@@ -29,7 +29,7 @@ func _physics_process(delta):
 			var new_unit = load(model_path).instantiate()
 			new_unit.position = position + spawn_point.position + Vector2((2-i)*32, 0)
 			new_unit.life = unit_slots[i].health * unit_slots[i].stats.health
-			new_unit.revenue = stat.revenue
+			new_unit.revenue = stat.revenue + unit_slots[i].money
 			get_parent().add_child(new_unit)
 			if stat.sprite_frames != null:
 				new_unit.animated_sprite_2d.sprite_frames = stat.sprite_frames

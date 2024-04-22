@@ -51,12 +51,14 @@ _data = {
 "selected": SubResource("Animation_mdihc")
 }
 
-[sub_resource type="Gradient" id="Gradient_cbc34"]
+[sub_resource type="Gradient" id="Gradient_6noup"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0.462745, 0, 1)
+colors = PackedColorArray(0, 0.662728, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_wxjdl"]
-gradient = SubResource("Gradient_cbc34")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_35u5j"]
+gradient = SubResource("Gradient_6noup")
+width = 4
+height = 2
 
 [node name="unit_slot" type="Node2D"]
 script = ExtResource("1_wp7jk")
@@ -109,4 +111,4 @@ position = Vector2(-8, 3)
 
 [node name="upgrade_money" parent="." instance=ExtResource("2_kiwvj")]
 position = Vector2(9, 3)
-texture = SubResource("GradientTexture1D_wxjdl")
+texture = SubResource("GradientTexture2D_35u5j")

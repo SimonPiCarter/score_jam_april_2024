@@ -3,6 +3,7 @@ extends Control
 var spawner : SpawnerSlot = null
 var unit : UnitSlot = null
 @onready var up_health = $up_health
+@onready var up_money = $up_money
 @onready var build = $build
 @onready var add_vanilla = $add_vanilla
 @onready var add_greedy = $add_greedy
@@ -17,6 +18,7 @@ func _ready():
 
 	# buttons
 	up_health.pressed.connect(up_health_pressed)
+	up_money.pressed.connect(up_money_pressed)
 	build.pressed.connect(build_pressed)
 	add_vanilla.pressed.connect(add_vanilla_pressed)
 	add_greedy.pressed.connect(add_greedy_pressed)
@@ -35,6 +37,7 @@ func selected(spawner_in):
 		pos = unit.global_position
 
 	up_health.visible = unit != null and unit.health == 1 and unit.stats != null
+	up_money.visible = unit != null and unit.money < 5 and unit.stats != null
 	build.visible = spawner != null and spawner.spawner == null
 	add_vanilla.visible = unit != null and unit.stats != preload("res://scene/game/unit/stats/vanilla_unit.tres")
 	add_greedy.visible = unit != null and unit.stats != preload("res://scene/game/unit/stats/greedy_unit.tres")
@@ -44,6 +47,8 @@ func selected(spawner_in):
 	command_panel.buttons = []
 	if up_health.visible:
 		command_panel.buttons.append(up_health)
+	if up_money.visible:
+		command_panel.buttons.append(up_money)
 	if build.visible:
 		command_panel.buttons.append(build)
 	if add_vanilla.visible:
@@ -63,6 +68,12 @@ func up_health_pressed():
 	if unit and Constants.money >= Constants.cost:
 		Constants.money -= Constants.cost
 		unit.up_health()
+		BusEvent.spawner_slot_selected.emit(null)
+
+func up_money_pressed():
+	if unit and Constants.money >= Constants.cost:
+		Constants.money -= Constants.cost
+		unit.up_money()
 		BusEvent.spawner_slot_selected.emit(null)
 
 func build_pressed():

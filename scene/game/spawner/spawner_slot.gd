@@ -19,14 +19,6 @@ func selected():
 	if enabled:
 		BusEvent.spawner_slot_selected.emit(self)
 
-func up_production():
-	if spawner and spawner.produce_time > 0.55:
-		spawner.produce_time -= 0.5
-
-func up_health():
-	if spawner:
-		spawner.health *= 2
-
 func build():
 	enabled = false
 	if not spawner:

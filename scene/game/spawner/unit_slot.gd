@@ -5,7 +5,11 @@ var stats = null
 @onready var button = $Button
 @onready var animation_player = $AnimationPlayer
 @onready var upgrade_health = $upgrade_health
+@onready var upgrade_money = $upgrade_money
+
 var health : int = 1
+# bonus money
+var money : int = 0
 var enabled = false
 
 func _ready():
@@ -33,3 +37,7 @@ func is_selected(selected_spawner):
 func up_health():
 	health = 2
 	upgrade_health.upgrade()
+
+func up_money():
+	money += 2
+	upgrade_money.upgrade()

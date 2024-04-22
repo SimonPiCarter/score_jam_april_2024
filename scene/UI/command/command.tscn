@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://mc33jv0dr3al"]
+[gd_scene load_steps=11 format=3 uid="uid://mc33jv0dr3al"]
 
 [ext_resource type="Script" path="res://scene/UI/command/command.gd" id="1_v2fqg"]
 [ext_resource type="PackedScene" uid="uid://c3pn62sha60v6" path="res://scene/UI/command/command_panel.tscn" id="2_bm651"]
@@ -8,6 +8,7 @@
 [ext_resource type="SpriteFrames" uid="uid://d4dco0qngi7e0" path="res://resource/unit/unit_money.tres" id="6_ooqnh"]
 [ext_resource type="SpriteFrames" uid="uid://daw1i82v5p15d" path="res://resource/unit/unit_armored.tres" id="7_w80io"]
 [ext_resource type="Texture2D" uid="uid://b56ai3eue4fjx" path="res://resource/button/health.png" id="8_clb0p"]
+[ext_resource type="Texture2D" uid="uid://bgsriiep5ptk7" path="res://resource/button/money.png" id="9_xdmir"]
 [ext_resource type="Texture2D" uid="uid://d0e1rso51gkhk" path="res://resource/button/cancel.png" id="9_ycgp2"]
 
 [node name="command" type="Control"]
@@ -88,6 +89,12 @@ visible = false
 layout_mode = 0
 tooltip_text = "Double health of the prisonner set up here."
 texture = ExtResource("8_clb0p")
+
+[node name="up_money" parent="." instance=ExtResource("3_hruma")]
+visible = false
+layout_mode = 0
+tooltip_text = "Escaping will grant 2 more money (stackable 5 times)."
+texture = ExtResource("9_xdmir")
 
 [node name="cancel" parent="." instance=ExtResource("3_hruma")]
 visible = false

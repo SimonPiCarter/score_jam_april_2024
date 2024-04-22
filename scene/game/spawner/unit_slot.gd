@@ -6,6 +6,7 @@ var stats = null
 @onready var animation_player = $AnimationPlayer
 @onready var upgrade_health = $upgrade_health
 var health : int = 1
+var enabled = false
 
 func _ready():
 	update()
@@ -20,7 +21,8 @@ func update():
 		sprite.show()
 
 func selected():
-	BusEvent.spawner_slot_selected.emit(self)
+	if enabled:
+		BusEvent.spawner_slot_selected.emit(self)
 
 func is_selected(selected_spawner):
 	if selected_spawner == self:

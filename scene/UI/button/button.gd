@@ -10,6 +10,7 @@ signal pressed
 
 func _ready():
 	label.text = text
+	visibility_changed.connect(_on_texture_button_mouse_exited)
 
 func _on_texture_button_button_down():
 	label.position.y = 2

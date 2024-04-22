@@ -24,7 +24,7 @@ func _on_leaderboard_request_completed(body):
 	# Formatting as a leaderboard
 	var leaderboardFormatted = ""
 	var leaderboardScoreFormatted = ""
-	if json.get_data().items != null:
+	if json.get_data().has("items") and json.get_data().items != null:
 		for n in json.get_data().items.size():
 			if json.get_data().items[n].player.id == Leaderboard.player_id:
 				leaderboardFormatted += "[color=yellow]"
@@ -42,6 +42,8 @@ func _on_leaderboard_request_completed(body):
 
 			leaderboardScoreFormatted += str(json.get_data().items[n].score)+str("\n")
 			leaderboardScoreFormatted += "[/color]"
+	else:
+		leaderboardScoreFormatted = "[color=red]Please refresh in a few seconds.[/color]"
 
 	text_names.text = leaderboardFormatted
 	text_scores.text = leaderboardScoreFormatted

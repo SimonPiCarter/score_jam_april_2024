@@ -99,7 +99,7 @@ func _on_leaderboard_request_completed(_result, _response_code, _headers, body):
 
 	# Formatting as a leaderboard
 	var leaderboardFormatted = ""
-	if json.get_data().items != null:
+	if json.get_data().has("items") and json.get_data().items != null:
 		for n in json.get_data().items.size():
 			leaderboardFormatted += str(json.get_data().items[n].rank)+str(". ")
 			leaderboardFormatted += str(json.get_data().items[n].player.id)+str(" - ")

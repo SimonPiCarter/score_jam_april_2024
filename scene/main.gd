@@ -49,3 +49,8 @@ func resize():
 	var diff_x = max(0, window_size.x - 1152)
 	var diff_y = max(0, window_size.y - 648)
 	camera.position = -Vector2(diff_x/4.,diff_y/4.)
+
+
+func _on_check_button_pressed():
+	var bus = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_mute(bus, not AudioServer.is_bus_mute(bus))

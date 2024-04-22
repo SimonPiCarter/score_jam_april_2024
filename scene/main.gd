@@ -20,8 +20,8 @@ func _ready():
 
 func lost():
 	open_menu(true)
+	Leaderboard._upload_score(Constants.score)
 	# Constants.paused = true
-	# Leaderboard._upload_score(Constants.score)
 	# Leaderboard._get_leaderboards()
 
 func start():

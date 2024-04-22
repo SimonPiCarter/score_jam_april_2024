@@ -84,7 +84,7 @@ anchor_bottom = 0.5
 offset_left = -167.0
 offset_top = -159.0
 offset_right = 167.0
-offset_bottom = 181.0
+offset_bottom = 165.0
 
 [node name="name_selection" parent="." instance=ExtResource("2_ry0y7")]
 layout_mode = 1

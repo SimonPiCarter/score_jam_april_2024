@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgtxvhqndwv8y"]
+[gd_scene load_steps=7 format=3 uid="uid://dgtxvhqndwv8y"]
 
 [ext_resource type="Script" path="res://scene/main.gd" id="1_aen23"]
 [ext_resource type="PackedScene" uid="uid://cci2jkmgx8nf2" path="res://scene/UI/menu/menu.tscn" id="4_cihhe"]
-[ext_resource type="PackedScene" uid="uid://bo5xe4rs64wn6" path="res://scene/UI/game_over/game_over.tscn" id="5_asxuo"]
 [ext_resource type="AudioStream" uid="uid://bvhdx8ruxeu6d" path="res://resource/music/first_music_looped.mp3" id="5_d61sc"]
 [ext_resource type="PackedScene" uid="uid://bxjyhgyjyqk0e" path="res://scene/UI/pause/pause_screen.tscn" id="6_tpx5j"]
 
@@ -18,9 +17,6 @@ process_mode = 3
 script = ExtResource("1_aen23")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="game_over" parent="CanvasLayer" instance=ExtResource("5_asxuo")]
-visible = false
 
 [node name="pause_screen" parent="CanvasLayer" instance=ExtResource("6_tpx5j")]
 visible = false

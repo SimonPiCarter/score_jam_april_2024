@@ -19,9 +19,10 @@ func _ready():
 	get_tree().get_root().size_changed.connect(resize)
 
 func lost():
-	Constants.paused = true
-	Leaderboard._upload_score(Constants.score)
-	Leaderboard._get_leaderboards()
+	open_menu(true)
+	# Constants.paused = true
+	# Leaderboard._upload_score(Constants.score)
+	# Leaderboard._get_leaderboards()
 
 func start():
 	Constants.paused = false
@@ -33,9 +34,10 @@ func restart():
 	add_child(game)
 	start()
 
-func open_menu():
+func open_menu(over = false):
 	Constants.paused = true
 	menu.visible = Constants.paused
+	menu.over = over
 
 func _input(event):
 	if event is InputEventKey and event.is_pressed() and event.keycode == KEY_ESCAPE:

@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo5xe4rs64wn6"]
+[gd_scene load_steps=6 format=3 uid="uid://bo5xe4rs64wn6"]
 
 [ext_resource type="Script" path="res://scene/UI/game_over/game_over.gd" id="1_hycby"]
+[ext_resource type="Texture2D" uid="uid://gdw73bl240vt" path="res://resource/walls_game_over.png" id="2_huy51"]
+[ext_resource type="FontFile" uid="uid://dhl3ca1ahg2i5" path="res://resource/font/Minecraft.ttf" id="3_mf17m"]
+[ext_resource type="PackedScene" uid="uid://bqycthlyrq2vv" path="res://scene/UI/name_selection/name_selection.tscn" id="4_otico"]
+[ext_resource type="PackedScene" uid="uid://c1d4sfyyvgtqg" path="res://scene/UI/button/button.tscn" id="4_pgwud"]
 
 [node name="game_over" type="Control"]
 layout_mode = 3
@@ -19,28 +23,78 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "game over"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Restart" type="Button" parent="."]
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -31.0
-offset_top = 21.0
-offset_right = 30.0
-offset_bottom = 52.0
+offset_left = -290.0
+offset_top = -262.0
+offset_right = 290.0
+offset_bottom = 262.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "restart"
+texture = ExtResource("2_huy51")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -64.0
+offset_right = 121.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_mf17m")
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" parent="." instance=ExtResource("4_pgwud")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = 75.0
+offset_right = 64.0
+offset_bottom = 95.0
+text = "RESTART"
+
+[node name="name_selection" parent="." instance=ExtResource("4_otico")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = 18.0
+offset_right = -142.0
+offset_bottom = 18.0
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

@@ -27,9 +27,9 @@ func send_name():
 
 func sent_name(result):
 	if result == 0:
-		rich_text_label.text = "[color=darkgreen]Successful[/color]"
+		rich_text_label.text = "[color=green]Successful[/color]"
 	else:
-		rich_text_label.text = "[color=darkred]Failed[/color]"
+		rich_text_label.text = "[color=red]Failed[/color]"
 	rich_text_label.show()
 
 var ban_words = [
